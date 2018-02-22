@@ -14,7 +14,7 @@ ProtectBlock blockreplica.is_locked
 
 Protect replica.incomplete
 Protect dataset.on_tape == PARTIAL
-Protect replica.is_last_transfer_source
+ProtectBlock blockreplica.is_last_transfer_source
 
 Protect dataset.name == /*/*/RAW and dataset.on_tape != FULL
 
