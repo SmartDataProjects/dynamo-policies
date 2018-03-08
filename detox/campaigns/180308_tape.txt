@@ -1,0 +1,48 @@
+### Partition
+Partition Tape
+
+### Target sites
+On site.name in [T*_MSS]
+
+### Deletion trigger
+When always
+Until never
+
+### Rules
+
+# GEN-SIM
+Protect dataset.name == /*MinBias*/RunIISummer15*/GEN-SIM
+Dismiss dataset.name == /*/RunIISummer15*/GEN-SIM
+Dismiss dataset.name == /*/PhaseISpring17GS*/GEN-SIM
+Dismiss dataset.name == /*/PhaseIFall16GS*/GEN-SIM
+
+# GEN-SIM-RAW
+Dismiss dataset.name == /*/RunIISummer16DR80*/GEN-SIM-RAW
+Dismiss dataset.name == /*/RunIISpring16DR80*/GEN-SIM-RAW
+Dismiss dataset.name == /*/PhaseISpring17DR*/GEN-SIM-RAW
+Dismiss dataset.name == /*/PhaseIFall16DR*/GEN-SIM-RAW
+
+# GEN-SIM-DIGI-RAW
+Protect dataset.name == /Neutrino_E-10_gun/*/GEN-SIM-DIGI-RAW
+Protect dataset.name == /SingleNeutrino/*/GEN-SIM-DIGI-RAW
+# no match for the next three
+#Dismiss dataset.name == /*/RunIISummer17PrePremix*/GEN-SIM-DIGI-RAW
+#Dismiss dataset.name == /*/RunIISummer15PrePremix*/GEN-SIM-DIGI-RAW
+#Dismiss dataset.name == /*/RunIISummer16FSPremix*/GEN-SIM-DIGI-RAW
+Dismiss dataset.name == /*/GEM2019Upg14DR*/GEN-SIM-DIGI-RAW
+Dismiss dataset.name == /*/TTI2023Upg14D*/GEN-SIM-DIGI-RAW
+Dismiss dataset.name == /*/TP2023HGCALDR*/GEN-SIM-DIGI-RAW
+ 
+# GEN-SIM-RAW-RECO
+Dismiss dataset.name == /*/*/GEN-SIM-RAW-RECO
+
+# AODSIM
+Dismiss dataset.name == /*/RunIISpring16DR80*/AODSIM
+Dismiss dataset.name == /*/RunIISpring16reHLT80*/AODSIM
+Dismiss dataset.name == /*/PhaseIFall16DR*/AODSIM
+ 
+# Default decision
+Protect
+
+### Candidate ordering
+Order none
