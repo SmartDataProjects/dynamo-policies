@@ -1,0 +1,14 @@
+Partition caf-alca
+
+### Target sites
+On site.name in [T1_*_Disk T2_*]
+
+### Deletion trigger
+When never
+Until never
+
+# Default decision
+Protect
+
+### Candidate ordering
+Order decreasing dataset.usage_rank
