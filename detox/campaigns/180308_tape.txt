@@ -17,6 +17,14 @@ Protect dataset.last_access newer_than 100 days ago
 Dismiss dataset.status == DEPRECATED
 Dismiss dataset.status == INVALID
 
+# HLT & AlCa data
+Dismiss dataset.name == /AlCaLumiPixels/Run2016*/RAW
+Dismiss dataset.name == /AlCaLumiPixels/Run2017*/RAW
+Dismiss dataset.name =~ /HLTPhysics[0-9]+/Run2016.+/RAW
+Dismiss dataset.name =~ /HLTPhysics[0-9]+/Run2017.+/RAW
+Dismiss dataset.name =~ /ParkingHLTPhysics[0-9]+/Run2016.+/RAW
+Dismiss dataset.name =~ /ParkingHLTPhysics[0-9]+/Run2017.+/RAW
+
 # RelVal
 Dismiss blockreplica.owner == RelVal
 
