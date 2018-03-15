@@ -10,6 +10,16 @@ Until never
 
 ### Rules
 
+# Do not delete anything that were accessed recently
+Protect dataset.last_access newer_than 100 days ago
+
+# INVALID & DEPRECATED & DELETED
+Dismiss dataset.status == DEPRECATED
+Dismiss dataset.status == INVALID
+
+# RelVal
+Dismiss blockreplica.owner == RelVal
+
 # GEN-SIM
 Protect dataset.name == /*MinBias*/RunIISummer15*/GEN-SIM
 Dismiss dataset.name == /*/RunIISummer15*/GEN-SIM
