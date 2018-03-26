@@ -19,7 +19,7 @@ Delete dataset.status == DEPRECATED and dataset.last_update older_than 1 week ag
 Delete dataset.status == INVALID and dataset.last_update older_than 1 week ago
 
 Protect replica.incomplete
-Protect dataset.on_tape == PARTIAL
+ProtectBlock dataset.on_tape == PARTIAL and not blockreplica.on_tape
 ProtectBlock blockreplica.is_last_transfer_source
 
 Protect dataset.name == /*/*/RAW and dataset.on_tape != FULL
