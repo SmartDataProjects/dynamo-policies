@@ -1,0 +1,11 @@
+{
+  "partition": "RelVal",
+  "rules": {
+    "relval_fnal_or_cern": {
+      "replicas": ["blockreplica.owner == RelVal"],
+      "num_copies": 1,
+      "destinations": ["site.name in [T1_US_FNAL_Disk T2_CH_CERN]"],
+      "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_CH_CERN]"]
+    }
+  }
+}
