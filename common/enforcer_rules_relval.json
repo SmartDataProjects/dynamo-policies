@@ -1,6 +1,6 @@
 {
   "partition": "RelVal",
-  "rules" {
+  "rules": {
     "relval_fnal_or_cern": {
       "replicas": ["blockreplica.owner == RelVal"],
       "num_copies": 1,
