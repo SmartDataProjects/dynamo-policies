@@ -1,7 +1,8 @@
 {
   "usa_miniaod": {
-    "datasets": ["/*/*/MINIAOD*"],
+    "replicas": ["dataset.name == /*/*/MINIAOD*"],
     "num_copies": 1,
-    "sites": ["T1_US_FNAL_Disk","T2_US_*"]
+    "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*]"],
+    "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"]
   }
 }
