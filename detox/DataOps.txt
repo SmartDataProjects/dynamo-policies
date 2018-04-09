@@ -13,12 +13,12 @@ Ignore site.name == T*_MSS
 ProtectBlock blockreplica.is_locked
 
 Protect replica.incomplete
-Protect dataset.on_tape == PARTIAL
+ProtectBlock dataset.on_tape == PARTIAL and not blockreplica.on_tape
 ProtectBlock blockreplica.is_last_transfer_source
 
 Protect dataset.name == /*/*/RAW and dataset.on_tape != FULL
 
-Protect dataset.name == /*/*/RECO and dataset.num_full_disk_copy == 0 and dataset.last_update newer_than 90 days ago
+Protect dataset.name == /*/*/RECO and dataset.last_update newer_than 90 days ago
 
 Protect dataset.on_tape == NONE
 
@@ -26,4 +26,4 @@ Protect dataset.on_tape == NONE
 Dismiss
 
 ### Candidate ordering
-Order decreasing dataset.usage_rank
+Order none
