@@ -9,7 +9,8 @@ Until never
 
 ProtectBlock blockreplica.is_locked
 
-ProtectBlock blockreplica.last_update newer_than 60 days ago
+# 2592000 = 60 x 60 x 24 x 30
+ProtectBlock blockreplica.age_relative_to_newest < 2592000
 
 Protect dataset.name == /*/*/ALCARECO and replica.first_block_created newer_than January 1
 Protect dataset.name == /*/*/ALCAPROMPT and replica.first_block_created newer_than January 1
