@@ -6,6 +6,12 @@
       "num_copies": 1,
       "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*]"],
       "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"]
+    },
+    "ral_offload": {
+      "replicas": ["replica.num_full_other_copy_common_owner == 0"],
+      "num_copies": 1,
+      "destinations": ["site.name == T1_UK_RAL_ECHO_Disk"],
+      "sources": ["site.name == T1_UK_RAL_Disk"]
     }
   }
 }
