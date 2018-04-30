@@ -25,9 +25,6 @@ Dismiss dataset.name =~ /HLTPhysics[0-9]+/Run2017.+/RAW
 Dismiss dataset.name =~ /ParkingHLTPhysics[0-9]+/Run2016.+/RAW
 Dismiss dataset.name =~ /ParkingHLTPhysics[0-9]+/Run2017.+/RAW
 
-# RelVal
-Dismiss blockreplica.owner == RelVal
-
 # GEN-SIM
 Protect dataset.name == /*MinBias*/RunIISummer15*/GEN-SIM
 Dismiss dataset.name == /*/RunIISummer15*/GEN-SIM
