@@ -7,6 +7,12 @@
       "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*]"],
       "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"]
     },
+    "reliable_aod": {
+      "replicas": ["dataset.name == /*/*/AOD"],
+      "num_copies": 1,
+      "destinations": ["site.name in [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"],
+      "sources": ["site.storage_type == DISK and site.name notin [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"]
+    },
     "ral_offload": {
       "replicas": ["replica.num_full_other_copy_common_owner == 0"],
       "num_copies": 1,
