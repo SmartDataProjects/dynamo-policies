@@ -1,0 +1,17 @@
+Partition AllDisk
+
+### Target sites
+On site.name in [T0_CH_CERN_Disk T1_*_Disk T2_*]
+
+### Deletion trigger
+When always
+Until never
+
+### Replica protection / deletion policies
+Dismiss dataset.unknown_in_all_dbs
+Dismiss dataset.status == UNKNOWN and dataset.last_update older_than 3 months ago
+
+Protect
+
+### Candidate ordering
+Order none

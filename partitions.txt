@@ -14,3 +14,4 @@ Tape:         site.storage_type == MSS
 PhysicsTape:  site.storage_type == MSS
 Physics:      [AnalysisOps, DataOpsDisk, PhysicsTape]
 DataOps:      [DataOpsDisk, PhysicsTape]
+AllDisk:      blockreplica.owner != None and site.storage_type == DISK
