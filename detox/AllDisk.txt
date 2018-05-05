@@ -8,6 +8,8 @@ When always
 Until never
 
 ### Replica protection / deletion policies
+Protect dataset.last_update newer_than 1 month ago
+
 Dismiss dataset.unknown_in_all_dbs
 Dismiss dataset.status == UNKNOWN and dataset.last_update older_than 3 months ago
 
