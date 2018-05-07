@@ -10,8 +10,32 @@ Until never
 
 ### Rules
 
+# EXCEPTIONS
+Protect dataset.name == /HLTPhysics4/Run2017A-v1/RAW
+Protect dataset.name == /HLTPhysics1/Run2017C-v1/RAW
+Protect dataset.name == /HLTPhysics2/Run2017C-v1/RAW
+Protect dataset.name == /HLTPhysics1/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics2/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics3/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics4/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics5/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics6/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics7/Run2017F-v1/RAW
+Protect dataset.name == /HLTPhysics8/Run2017F-v1/RAW
+Protect dataset.name == /BdToKstarJPsi_EtaPtFilter_8TeV-pythia6-evtgen/Summer12_DR53X-PU_RD1_START53_V19F-v1/AODSIM
+Protect dataset.name == /XXTo4J_M-*_CTau-*_TuneCUETP8M1_13TeV_pythia8/RunIISpring16reHLT80-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v*/AODSIM
+Protect dataset.name == /SingleNeutrino/PhaseISpring17DR-FlatPU28to62HcalNZS_90X_upgrade2017_realistic_v20_ext1-v1/GEN-SIM-RAW
+Protect dataset.name == /MinBias_TuneCUETP8M1_13TeV-pythia8/PhaseISpring17GS-90X_upgrade2017_realistic_v20-v1/GEN-SIM
+Protect dataset.name == /QCD_Pt-15to40_fwdJet_bwdJet_Tune4C_2p76TeV-pythia8/ppSpring2014DRX53-castor_PU0p35bx25_STARTHI53_V28-v1/AODSIM
+Protect dataset.name == /QCD_Pt-15to40_fwdJet_bwdJet_TuneEE3C_2p76TeV-herwigpp/ppSpring2014DRX53-castor_PU0p35bx25_STARTHI53_V28-v1/AODSIM
+Protect dataset.name == /QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIISpring16DR80-NoPU_magnetOn_80X_mcRun2_asymptotic_2016_v3-v2/AODSIM
+Protect dataset.name == /BsToJpsiPhi_BFilter_TuneCUEP8M1_13TeV-pythia8-evtgen/PhaseIFall16DR-FlatPU28to62HcalNZSRAW_81X_upgrade2017_realistic_v26-v1/AODSIM
+Protect dataset.name == /BsToJpsiPhi_BMuonFilter_TuneCUEP8M1_13TeV-pythia8-evtgen/RunIISpring16DR80-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/AODSIM
+Protect dataset.name == /BsToJpsiPhi_SoftQCDnonD_TuneCUEP8M1_13TeV-pythia8-evtgen/RunIISummer15GS-MCRUN2_71_V1-v1/GEN-SIM
+Protect dataset.name == /bbbarToMuMu_MuonPt3_TuneCUEP8M1_13TeV-pythia8-evtgen/RunIISummer15GS-MCRUN2_71_V1-v1/GEN-SIM
+
 # Do not delete anything that were accessed recently
-Protect dataset.last_access newer_than 100 days ago
+Protect dataset.last_access newer_than 160 days ago
 
 # INVALID & DEPRECATED & DELETED
 Dismiss dataset.status == DEPRECATED
