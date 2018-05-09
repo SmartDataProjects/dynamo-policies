@@ -5,19 +5,50 @@
       "replicas": ["dataset.name == /*/*/MINIAOD*"],
       "num_copies": 1,
       "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*]"],
-      "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"]
+      "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"],
+      "protect": true
     },
     "reliable_aod": {
       "replicas": ["dataset.name == /*/*/AOD"],
       "num_copies": 1,
       "destinations": ["site.name in [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"],
-      "sources": ["site.storage_type == DISK and site.name notin [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"]
+      "sources": ["site.storage_type == DISK and site.name notin [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"],
+      "protect": false
     },
     "ral_offload": {
-      "replicas": ["replica.num_full_other_copy_common_owner == 0"],
+      "replicas": ["replica.num_full_other_copy_common_owner == 0", "dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2"],
       "num_copies": 1,
       "destinations": ["site.name == T1_UK_RAL_ECHO_Disk"],
-      "sources": ["site.name == T1_UK_RAL_Disk"]
+      "sources": ["site.name == T1_UK_RAL_Disk"],
+      "protect": true
+    },
+    "knu_offload": {
+      "replicas": ["replica.num_full_other_copy_common_owner == 0", "dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2"],
+      "num_copies": 1,
+      "destinations": ["site.name == T2*"],
+      "sources": ["site.name == T2_KR_KNU"],
+      "protect": true
+    },
+    "hcal_pog": {
+      "replicas": [
+        "dataset.name == /Commissioning/Run2018*-HcalCalIsoTrk-PromptReco-v*/ALCARECO",
+        "dataset.name == /Commissioning/Run2018*-HcalCalIsolatedBunchSelector-PromptReco-v*/ALCARECO",
+        "dataset.name == /EGamma/Run2018*-HcalCalIsoTrkFilter-PromptReco-v*/ALCARECO",
+        "dataset.name == /EGamma/Run2018*-HcalCalIterativePhiSym-PromptReco-v*/ALCARECO",
+        "dataset.name == /JetHT/Run2018*-HcalCalIsoTrkFilter-PromptReco-v*/ALCARECO",
+        "dataset.name == /JetHT/Run2018*-HcalCalIsolatedBunchFilter-PromptReco-v*/ALCARECO",
+        "dataset.name == /HcalNZS/Run2018*-HcalCalMinBias-PromptReco-v*/ALCARECO",
+        "dataset.name == /SingleMuon/Run2018*-HcalCalIterativePhiSym-PromptReco-v*/ALCARECO",
+        "dataset.name == /SingleMuon/Run2018*-HcalCalHBHEMuonFilter-PromptReco-v*/ALCARECO",
+        "dataset.name == /SingleMuon/Run2018*-HcalCalHO-PromptReco-v*/ALCARECO",
+        "dataset.name == /SingleMuon/Run2018*-ZMu-PromptReco-v*/RAW-RECO",
+        "dataset.name == /EGamma/Run2018*-PromptReco-v*/MINIAOD"
+      ],
+      "num_copies": 1,
+      "destinations": ["site.name == T2*"],
+      "sources": ["site.name == T*"],
+      "protect": false
     }
   }
 }
+
