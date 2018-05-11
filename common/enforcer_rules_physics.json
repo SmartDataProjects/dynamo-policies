@@ -20,14 +20,14 @@
       "num_copies": 1,
       "destinations": ["site.name == T1_UK_RAL_ECHO_Disk"],
       "sources": ["site.name == T1_UK_RAL_Disk"],
-      "protect": true
+      "protect": false
     },
     "knu_offload": {
       "replicas": ["replica.num_full_other_copy_common_owner == 0", "dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2"],
       "num_copies": 1,
       "destinations": ["site.name == T2*"],
       "sources": ["site.name == T2_KR_KNU"],
-      "protect": true
+      "protect": false
     },
     "hcal_pog": {
       "replicas": [
