@@ -48,6 +48,16 @@
       "destinations": ["site.name == T2*"],
       "sources": ["site.name == T*"],
       "protect": false
+    },
+    "temporary_reserved_analysis": {
+      "replicas": [
+        "dataset.name == /Bs5830ToBstarKToGammaBKToGammaJpsiKK_BMuonFilter_TuneZ2star_8TeV-pythia6-evtgen/Summer12DR53X-PU_RD2_RECO_START53_V19F_ext1-v1/GEN-SIM-RECO",
+        "dataset.name == /Bs5830ToBstarKsToGammaBKsToGammaJpsiKpiKs_BMuonFilter_TuneZ2star_8TeV-pythia6-evtgen/Summer12DR53X-PU_RD2_RECO_START53_V19F_ext2-v1/GEN-SIM-RECO"
+      ],
+      "num_copies": 1,
+      "destinations": ["site.name in [T1_*_Disk T2*]"],
+      "sources": ["site.name == T*"],
+      "protect": false
     }
   }
 }
