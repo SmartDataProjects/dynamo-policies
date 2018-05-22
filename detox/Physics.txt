@@ -19,7 +19,6 @@ Delete dataset.status == INVALID and dataset.last_update older_than 1 week ago
 Protect replica.enforcer_protected
 
 Protect dataset.unhandled_copy_exists
-Protect replica.incomplete
 ProtectBlock dataset.on_tape == PARTIAL and not blockreplica.on_tape
 ProtectBlock dataset.tape_copy_requested and not blockreplica.on_tape
 ProtectBlock blockreplica.is_last_transfer_source
@@ -31,6 +30,8 @@ DismissBlock dataset.name == /*/*/RECO and dataset.last_update older_than 90 day
 ProtectBlock dataset.on_tape == NONE and blockreplica.owner == DataOps
 
 DeleteBlock blockreplica.owner == DataOps
+
+Protect replica.incomplete
 
 DismissBlock dataset.name == /*/*/RAW and dataset.name != /*Scouting*/*/RAW and blockreplica.last_update older_than 60 days ago
 DismissBlock dataset.name == /*/*/RECO and dataset.name != /*/Run*-*-*-v*/RECO and blockreplica.last_update older_than 90 days ago
