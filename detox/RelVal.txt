@@ -20,7 +20,7 @@ Protect dataset.last_update newer_than 3 months ago
 
 Protect dataset.name =~ /[^/]+/.*CMSSW_[0-9]+_[0-9]+_[0-9]+[^/]*/.+ and dataset.name !=~ /[^/]+/.*CMSSW_[0-9]+_[0-9]+_[0-9]+_pre[^/]*/.+
 
-Protect dataset.name == /*/*/GEN* and dataset.last_update newer_than 12 months ago
+Protect dataset.name =~ /[^/]+/[^/]+/GEN-SIM(?:-RECO|)$ and dataset.last_update newer_than 12 months ago
 
 Dismiss
 
