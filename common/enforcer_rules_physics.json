@@ -1,5 +1,6 @@
 {
   "partition": "Physics",
+  "default_destination_group": "AnalysisOps",
   "rules": {
     "usa_miniaod": {
       "replicas": ["dataset.name == /*/*/MINIAOD*"],
