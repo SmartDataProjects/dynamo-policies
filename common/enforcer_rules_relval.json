@@ -1,5 +1,6 @@
 {
   "partition": "RelVal",
+  "default_destination_group": "RelVal",
   "rules": {
     "relval_fnal_or_cern": {
       "replicas": ["blockreplica.owner == RelVal"],
