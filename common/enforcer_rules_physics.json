@@ -16,20 +16,6 @@
       "sources": ["site.storage_type == DISK and site.name notin [T1_*_Disk T2_BE_* T2_CH_* T2_DE_* T2_ES_CIEMAT T2_IT_* T2_PL_* T2_US_Caltech T2_US_Florida T2_US_MIT T2_US_Nebraska T2_US_Purdue T2_US_UCSD T2_US_Wisconsin]"],
       "protect": false
     },
-    "ral_offload": {
-      "replicas": ["replica.num_full_other_copy_common_owner == 0", "dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2"],
-      "num_copies": 1,
-      "destinations": ["site.name == T1_UK_RAL_ECHO_Disk"],
-      "sources": ["site.name == T1_UK_RAL_Disk"],
-      "protect": false
-    },
-    "knu_offload": {
-      "replicas": ["replica.num_full_other_copy_common_owner == 0", "dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2"],
-      "num_copies": 1,
-      "destinations": ["site.name == T2*"],
-      "sources": ["site.name == T2_KR_KNU"],
-      "protect": false
-    },
     "hcal_pog": {
       "replicas": [
         "dataset.name == /Commissioning/Run2018*-HcalCalIsoTrk-PromptReco-v*/ALCARECO",
@@ -47,6 +33,42 @@
       ],
       "num_copies": 1,
       "destinations": ["site.name == T2*"],
+      "sources": ["site.name == T*"],
+      "protect": false
+    },
+    "ecal_pog": {
+      "replicas": [
+        "dataset.name == /AlCaP0/Run2016*-v*/RAW",
+        "dataset.name == /AlCaP0/Run2017A-v1/RAW",
+        "dataset.name == /AlCaP0/Run2017C-v1/RAW",
+        "dataset.name == /AlCaP0/Run2018*-v*/RAW",
+        "dataset.name == /AlCaPhiSym/Run2016*-v*/RAW",
+        "dataset.name == /AlCaPhiSym/Run2017A-v1/RAW",
+        "dataset.name == /AlCaPhiSym/Run2017C-v1/RAW",
+        "dataset.name == /AlCaPhiSym/Run2017D-v1/RAW",
+        "dataset.name == /AlCaPhiSym/Run2018*-v*/RAW",
+        "dataset.name == /EGamma/Run2018*-EcalUncalWElectron-PromptReco-v*/ALCARECO",
+        "dataset.name == /EGamma/Run2018*-EcalUncalZElectron-PromptReco-v*/ALCARECO",
+        "dataset.name == /DoubleEG/Run2016B-EcalUncalZElectron-07Aug17_ver1-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2016D-EcalUncalZElectron-07Aug17-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2016E-EcalUncalZElectron-07Aug17-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2016F-EcalUncalZElectron-07Aug17-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2016H-EcalUncalZElectron-07Aug17-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017C-EcalUncalZElectron-17Nov2017-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017F-EcalUncalZElectron-17Nov2017-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017A-EcalUncalWElectron-PromptReco-v2/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017A-EcalUncalWElectron-PromptReco-v3/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017B-EcalUncalWElectron-PromptReco-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017B-EcalUncalWElectron-PromptReco-v2/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017C-EcalUncalWElectron-PromptReco-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017C-EcalUncalWElectron-PromptReco-v2/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017C-EcalUncalWElectron-PromptReco-v3/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017D-EcalUncalWElectron-PromptReco-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017E-EcalUncalWElectron-PromptReco-v1/ALCARECO",
+        "dataset.name == /DoubleEG/Run2017F-EcalUncalWElectron-PromptReco-v1/ALCARECO"
+      ],
+      "num_copies": 1,
+      "destinations": ["site.name in [T1*_Disk T2*]"],
       "sources": ["site.name == T*"],
       "protect": false
     },
