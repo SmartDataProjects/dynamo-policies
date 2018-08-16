@@ -5,7 +5,7 @@
     "usa_miniaod": {
       "replicas": ["dataset.name == /*/*/MINIAOD*"],
       "num_copies": 1,
-      "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*]"],
+      "destinations": ["site.name in [T1_US_FNAL_Disk T2_US_*] and site.name != T2_US_Caltech"],
       "sources": ["site.storage_type == DISK and site.name notin [T1_US_FNAL_Disk T2_US_*]"],
       "protect": true
     },
@@ -82,6 +82,18 @@
       "destinations": ["site.name in [T1_*_Disk T2*]"],
       "sources": ["site.name == T*"],
       "protect": false
+    },
+    "caltech_xrootdcache_test": {
+      "replicas": [
+        "dataset.name == /*/Run2016*-03Feb2017*/MINIAOD",
+        "dataset.name == /*/RunIISummer16MiniAODv2*PUMoriond17_80X*/MINIAODSIM",
+        "dataset.name == /*/RunIIFall17MiniAODv2*/MINIAODSIM",
+        "dataset.name == /*/Run2017*31Mar2018*/MINIAOD"
+      ],
+      "num_copies": 1,
+      "destinations": ["site.name in [T1_US_FNAL_Disk T2_*] and site.name != T2_US_Caltech"],
+      "sources": ["site.name == T2_US_Caltech"],
+      "protect": true
     }
   }
 }

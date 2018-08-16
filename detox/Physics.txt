@@ -48,6 +48,11 @@ Protect dataset.on_tape != FULL and replica.num_full_other_copy_common_owner < 2
 Protect dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2
 Protect replica.num_full_other_copy_common_owner == 0
 
+Delete site.name == T2_US_Caltech and dataset.name == /*/Run2016*-03Feb2017*/MINIAOD
+Delete site.name == T2_US_Caltech and dataset.name == /*/RunIISummer16MiniAODv2*PUMoriond17_80X*/MINIAODSIM
+Delete site.name == T2_US_Caltech and dataset.name == /*/RunIIFall17MiniAODv2*/MINIAODSIM
+Delete site.name == T2_US_Caltech and dataset.name == /*/Run2017*31Mar2018*/MINIAOD
+
 # Default decision
 Dismiss
 
