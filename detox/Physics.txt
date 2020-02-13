@@ -25,6 +25,15 @@ ProtectBlock blockreplica.is_last_transfer_source
 
 Protect dataset.name == /*/*/RAW and dataset.on_tape != FULL
 Protect dataset.name == /*/*/NANOAOD*
+#ProtectBlock dataset.name == /*/*/NANOAOD* and blockreplica.owner == AnalysisOps and dataset.on_tape != FULL
+
+### Temporary block start
+ProtectBlock dataset.name == /*/RunIISummer19UL*/GEN and blockreplica.owner == AnalysisOps
+Protect dataset.name == /*/*pLHE*/LHE and site.name == T2_CH_CERN
+Protect site.name == T2_US_Vanderbilt and dataset.name == /*/*HI*/*
+ProtectBlock dataset.name == /*/HINPbPbAutumn18DR-NoPUmva98*/AODSIM and blockreplica.owner == AnalysisOps
+ProtectBlock dataset.name == /*/HINPbPbAutumn18DR-mva98*/AODSIM and blockreplica.owner == AnalysisOps
+### Temporary block end
 
 DismissBlock dataset.name == /*/*/RECO and dataset.last_update older_than 90 days ago and blockreplica.owner == DataOps
 
@@ -47,12 +56,8 @@ Dismiss dataset.last_update older_than 300 days ago and replica.last_block_creat
 
 Protect dataset.on_tape != FULL and replica.num_full_other_copy_common_owner < 2
 Protect dataset.name == /*/*/MINIAOD* and replica.num_full_other_copy_common_owner < 2
-Protect replica.num_full_other_copy_common_owner == 0
-
-Delete site.name == T2_US_Caltech and dataset.name == /*/Run2016*-03Feb2017*/MINIAOD
-Delete site.name == T2_US_Caltech and dataset.name == /*/RunIISummer16MiniAODv2*PUMoriond17_80X*/MINIAODSIM
-Delete site.name == T2_US_Caltech and dataset.name == /*/RunIIFall17MiniAODv2*/MINIAODSIM
-Delete site.name == T2_US_Caltech and dataset.name == /*/Run2017*31Mar2018*/MINIAOD
+Protect replica.num_full_other_copy_common_owner == 0 and dataset.name == /*/*/RAW
+Protect replica.num_full_other_copy_common_owner == 0 and dataset.name == /*/*UL*/*
 
 # Default decision
 Dismiss
